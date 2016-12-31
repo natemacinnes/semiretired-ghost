@@ -2,7 +2,7 @@
 // Setup your Ghost install for various [environments](http://support.ghost.org/config/#about-environments).
 
 // Ghost runs in `development` mode by default. Full documentation can be found at http://support.ghost.org/config/
-
+require('dotenv').config()
 var path = require('path'),
     config;
 
@@ -27,8 +27,8 @@ config = {
         storage: {
             active: 'ghost-s3',
             'ghost-s3': {
-                accessKeyId: 'AKIAIRRV4YW5HJ3QY7LA',
-                secretAccessKey: '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',
+                accessKeyId: process.env.S3_ACCESS_KEY_ID,
+                secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
                 bucket: 'semiretired-ghost',
                 region: 'us-east-1'
             }
@@ -86,8 +86,8 @@ config = {
         storage: {
             active: 'ghost-s3',
             'ghost-s3': {
-                accessKeyId: 'AKIAIRRV4YW5HJ3QY7LA',
-                secretAccessKey: '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',
+                accessKeyId: process.env.S3_ACCESS_KEY_ID,
+                secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
                 bucket: 'semiretired-ghost',
                 region: 'us-east-1'
             }
